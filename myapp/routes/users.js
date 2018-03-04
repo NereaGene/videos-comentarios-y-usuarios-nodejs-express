@@ -24,7 +24,15 @@ router.post("/", function(req, res, next){
 });
     
 router.get("/:id", function(req, res, next){
-    res.send("Mostrar usuario" + req.params.id);
+    //res.send("Mostrar usuario" + req.params.id);
+    var usuario=
+        {
+            usuario:"pepe",
+            email:"pepe@gmail.com",
+            id:req.params.id}
+    res.setHeader("Content-Type", "application/json");
+    res.send(JSON.stringify(usuario));
+    
 });
 
 router.post("/:id", function(req, res, next){
